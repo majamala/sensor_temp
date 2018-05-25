@@ -52,7 +52,7 @@ public class SensorDB{
 
             int randomValue = r.nextInt((rangeMax - rangeMin) + 1) + rangeMin;
 
-            SensorReading sensorReading = new SensorReading(id, "sensor_temp", format.format(now), randomValue, "'C");
+            SensorReading sensorReading = new SensorReading(id, "sensor_temp", format.format(now), randomValue, "°C");
 
             sensorTemp.put(id, sensorReading);
 
