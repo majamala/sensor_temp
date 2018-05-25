@@ -3,6 +3,7 @@ package com.yammer;
 import com.google.gson.Gson;
 import io.dropwizard.client.JerseyClientBuilder;
 import io.dropwizard.setup.Environment;
+import org.glassfish.jersey.client.ClientProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import javax.ws.rs.client.Client;
@@ -28,6 +29,7 @@ public class SensorDB{
 
         Config cfg = new Config();
         final Client client = new JerseyClientBuilder(environment).build("SensorRESTClient");
+        client.property(ClientProperties.READ_TIMEOUT, 10000);
         Gson gson = new Gson();
 
         SensorInfo sensorInfo = new SensorInfo(cfg.getProperty("name"),cfg.getProperty("location"),App.ip.getHostAddress(), cfg.getProperty("port"), cfg.getProperty("description"),cfg.getProperty("unit"), cfg.getProperty("meta"));
