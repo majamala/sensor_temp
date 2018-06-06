@@ -49,7 +49,7 @@ public class SensorDB{
 
             int randomValue = r.nextInt((rangeMax - rangeMin) + 1) + rangeMin;
 
-            SensorReading sensorReading = new SensorReading("sensor_temp", format.format(now), randomValue, "°C");
+            SensorReading sensorReading = new SensorReading(cfg.getProperty("name"), format.format(now), randomValue, "°C");
 
             webTarget = client.target ("http://localhost:8080/api/sensorReadings/sensor_temp");
             response = webTarget.request().post(Entity.json(sensorReading));
