@@ -2,12 +2,9 @@ package com.yammer;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.validation.constraints.NotNull;
 
 public class SensorReading {
 
-    @NotNull
-    private int id;
     @NotBlank
     private String name;
     @NotBlank
