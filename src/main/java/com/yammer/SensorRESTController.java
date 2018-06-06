@@ -19,11 +19,4 @@ public class SensorRESTController {
 
     }
 
-    @POST
-    @Path("/sensorTemp")
-    public Response getSensorTempReadings() {
-        return Response.ok(SensorDB.getSensorTemp()).build();
-
-    }
-
 }
