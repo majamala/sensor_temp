@@ -40,8 +40,8 @@ public class SensorDB{
 
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         Random r = new Random();
-        int rangeMin = 10;
-        int rangeMax = 30;
+        int rangeMin = 0;
+        int rangeMax = 40;
         int id = 0;
 
         while (true) {
