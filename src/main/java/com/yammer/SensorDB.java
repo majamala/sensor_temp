@@ -51,7 +51,7 @@ public class SensorDB{
 
             SensorReading sensorReading = new SensorReading(cfg.getProperty("name"), format.format(now), randomValue, "°C");
 
-            webTarget = client.target ("http://localhost:8080/api/sensorReadings/sensor_temp");
+            webTarget = client.target ("http://localhost:8080/api/sensorReadings/"+cfg.getProperty("name"));
             response = webTarget.request().post(Entity.json(sensorReading));
 
             Thread.sleep(5000);
